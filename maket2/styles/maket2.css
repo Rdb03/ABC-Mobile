@@ -213,7 +213,6 @@ button {
 
 .zipper-block {
 	background: url("../images/rain_bk2.png") no-repeat top center transparent;
-	background-size: 100%;
 	position: relative;
 	padding: 10px;
 	box-sizing: border-box;
@@ -283,7 +282,7 @@ button {
 .zipper-block-btn {
 	background-color: transparent;
 	color: #FFFFFF;
-	margin: 30px auto;
+	margin: 30px auto 0;
 	width: 189px;
 	border-radius: 20px;
 	text-transform: uppercase;

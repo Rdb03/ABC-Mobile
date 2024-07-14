@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title>IQ Test</title>
+	<link rel='stylesheet' href='./styles/maketTest.css'>
+</head>
+<body>
+<header>
+	<div class='header'>
+		<button class='burger-menu' id='navBtn'></button>
+		<div class='header-content'>
+			<img class='header-img' src='./images/brain_bk.png' alt='brain' />
+			<p class='header-text'>Тест на определение IQ</p>
+		</div>
+	</div>
+	<nav class='nav-list nav-hidden' id='mainNav'>
+		<ul>
+			<li><a href='#'>Главная</a></li>
+			<li><a href='#'>Информация о тесте</a></li>
+			<li><a href='#' class='active'>Пройти тест</a></li>
+		</ul>
+	</nav>
+</header>
+<main>
+	<div class='test-container' id='test-container'>
+		<div class='progress-bar'>
+			<div class='progress-bar-fill' id='progress-bar-fill'></div>
+		</div>
+		<div class='question' id='question-1'>
+			<p>Ваш пол:</p>
+			<label class='checkbox-container'>Мужчина
+				<input type='radio' name='gender' class='answer-checkbox' data-answer='Мужской'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>Женщина
+				<input type='radio' name='gender' class='answer-checkbox' data-answer='Женский'>
+				<span class='checkmark'></span>
+			</label>
+			<button class='next-btn' id='next-button-1' onclick='nextQuestion(2)' disabled>Далее</button>
+		</div>
+		<div class='question' id='question-2' style='display: none;'>
+			<p>Ваш возраст:</p>
+			<label class='checkbox-container'>До 18
+				<input type='radio' name='age' class='answer-checkbox' data-answer='До 18'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>От 18 до 28
+				<input type='radio' name='age' class='answer-checkbox' data-answer='От 18 до 28'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>От 29 до 35
+				<input type='radio' name='age' class='answer-checkbox' data-answer='От 29 до 35'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>От 36
+				<input type='radio' name='age' class='answer-checkbox' data-answer='От 36'>
+				<span class='checkmark'></span>
+			</label>
+			<button class='next-btn' id='next-button-2' onclick='nextQuestion(3)' disabled>Далее</button>
+		</div>
+		<div class='question' id='question-3' style='display: none;'>
+			<p>Выберите лишнее:</p>
+			<label class='checkbox-container'>Дом
+				<input type='radio' name='extra' class='answer-checkbox' data-answer='Дом'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>Шалаш
+				<input type='radio' name='extra' class='answer-checkbox' data-answer='Шалаш'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>Бунгало
+				<input type='radio' name='extra' class='answer-checkbox' data-answer='Бунгало'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>Скамейка
+				<input type='radio' name='extra' class='answer-checkbox' data-answer='Скамейка'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>Хижина
+				<input type='radio' name='extra' class='answer-checkbox' data-answer='Хижина'>
+				<span class='checkmark'></span>
+			</label>
+			<button class='next-btn' id='next-button-3' onclick='nextQuestion(4)' disabled>Далее</button>
+		</div>
+		<div class='question' id='question-4' style='display: none;'>
+			<p>Продолжите числовой ряд 18 20 24 32:</p>
+			<label class='checkbox-container'>62
+				<input type='radio' name='number' class='answer-checkbox' data-answer='62'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>48
+				<input type='radio' name='number' class='answer-checkbox' data-answer='48'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>74
+				<input type='radio' name='number' class='answer-checkbox' data-answer='74'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>57
+				<input type='radio' name='number' class='answer-checkbox' data-answer='57'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>60
+				<input type='radio' name='number' class='answer-checkbox' data-answer='60'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>77
+				<input type='radio' name='number' class='answer-checkbox' data-answer='77'>
+				<span class='checkmark'></span>
+			</label>
+			<button class='next-btn' id='next-button-4' onclick='nextQuestion(5)' disabled>Далее</button>
+		</div>
+		<div class='question' id='question-5' style='display: none;'>
+			<p>Выберите цвет, который сейчас наиболее вам приятен:</p>
+			<div class='color-options'>
+				<div class='color-option' data-answer='Серый' style='background-color: gray;'></div>
+				<div class='color-option' data-answer='Синий' style='background-color: blue;'></div>
+				<div class='color-option' data-answer='Зеленый' style='background-color: green;'></div>
+				<div class='color-option' data-answer='Красный' style='background-color: red;'></div>
+				<div class='color-option' data-answer='Черный' style='background-color: black;'></div>
+				<div class='color-option' data-answer='Желтый' style='background-color: yellow;'></div>
+				<div class='color-option' data-answer='Коричневый' style='background-color: brown;'></div>
+				<div class='color-option' data-answer='Фиолетовый' style='background-color: purple;'></div>
+				<div class='color-option' data-answer='Бирюзовый' style='background-color: turquoise;'></div>
+			</div>
+			<button class='next-btn' id='next-button-5' onclick='nextQuestion(6)' disabled>Далее</button>
+		</div>
+		<div class='question' id='question-6' style='display: none;'>
+			<p>Какой из городов лишний?</p>
+			<label class='checkbox-container'>Вашингтон
+				<input type='radio' name='city' class='answer-checkbox' data-answer='Вашингтон'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>Лондон
+				<input type='radio' name='city' class='answer-checkbox' data-answer='Лондон'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>Париж
+				<input type='radio' name='city' class='answer-checkbox' data-answer='Париж'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>Нью-Йорк
+				<input type='radio' name='city' class='answer-checkbox' data-answer='Нью-Йорк'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>Москва
+				<input type='radio' name='city' class='answer-checkbox' data-answer='Москва'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>Оттава
+				<input type='radio' name='city' class='answer-checkbox' data-answer='Оттава'>
+				<span class='checkmark'></span>
+			</label>
+			<button class='next-btn' id='next-button-6' onclick='nextQuestion(7)' disabled>Далее</button>
+		</div>
+		<div class='question' id='question-7' style='display: none;'>
+			<p>Выберите правильную фигуру из четырёх пронумерованных:</p>
+			<div class='figure-options mans-options'>
+				<img class='little-man-img' src='./images/little-mens.png' alt='little-mans' />
+				<div class='mans-answer'>
+					<div class='figure-option' data-answer='1'>1</div>
+					<div class='figure-option' data-answer='2'>2</div>
+					<div class='figure-option' data-answer='3'>3</div>
+					<div class='figure-option' data-answer='4'>4</div>
+				</div>
+			</div>
+			<button class='next-btn' id='next-button-7' onclick='nextQuestion(8)' disabled>Далее</button>
+		</div>
+		<div class='question' id='question-8' style='display: none;'>
+			<p>Вам привычнее и важнее:</p>
+			<label class='checkbox-container'>Наслаждаться каждой минутой проведенного времени
+				<input type='radio' name='habit' class='answer-checkbox'
+				       data-answer='Наслаждаться каждой минутой проведенного времени'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>Быть устремленными мыслями в будущее
+				<input type='radio' name='habit' class='answer-checkbox' data-answer='Быть устремленными мыслями в будущее'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>Учитывать в ежедневной практике прошлый опыт
+				<input type='radio' name='habit' class='answer-checkbox'
+				       data-answer='Учитывать в ежедневной практике прошлый опыт'>
+				<span class='checkmark'></span>
+			</label>
+			<button class='next-btn' id='next-button-8' onclick='nextQuestion(9)' disabled>Далее</button>
+		</div>
+		<div class='question' id='question-9' style='display: none;'>
+			<p>Какое определение, по-Вашему, больше подходит к этому геометрическому изображению:</p>
+			<img class='question-img' src='./images/rhombus.png' alt='rhombus'>
+			<label class='checkbox-container'>Оно остроконечное
+				<input type='radio' name='geometry' class='answer-checkbox' data-answer='Оно остроконечное'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>Оно устойчиво
+				<input type='radio' name='geometry' class='answer-checkbox' data-answer='Оно устойчиво'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>Оно находится в состоянии равновесия
+				<input type='radio' name='geometry' class='answer-checkbox' data-answer='Оно находится в состоянии равновесия'>
+				<span class='checkmark'></span>
+			</label>
+			<button class='next-btn' id='next-button-9' onclick='nextQuestion(10)' disabled>Далее</button>
+		</div>
+		<div class='question' id='question-10' style='display: none;'>
+			<p>Вставьте подходящее число:</p>
+			<img class='question-img' src='./images/start-img.png' alt='star'>
+			<label class='checkbox-container'>34
+				<input type='radio' name='sequence' class='answer-checkbox' data-answer='34'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>36
+				<input type='radio' name='sequence' class='answer-checkbox' data-answer='36'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>53
+				<input type='radio' name='sequence' class='answer-checkbox' data-answer='53'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>44
+				<input type='radio' name='sequence' class='answer-checkbox' data-answer='44'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>66
+				<input type='radio' name='sequence' class='answer-checkbox' data-answer='66'>
+				<span class='checkmark'></span>
+			</label>
+			<label class='checkbox-container'>42
+				<input type='radio' name='sequence' class='answer-checkbox' data-answer='42'>
+				<span class='checkmark'></span>
+			</label>
+			<button class='next-btn' id='finish-button' onclick='finishTest()' disabled>Завершить</button>
+		</div>
+		<div class='loading' id='loading' style='display: none;'>
+			<img class='spinner' src='./images/spinner.png' alt='Loading...'>
+			<p class='loading-text'>Определение стиля мышления...........
+				.... ...................................................</p>
+		</div>
+		<div class='result' id='result' style='display: none;'>
+			<h2 class='result-title'>Ваш результат рассчитан:</h2>
+			<p class='result-text'><span>Вы относитесь к 3%</span> респондентов, чей уровень интеллекта более чем на
+				15 пунктов отличается от среднего в <br /> большую или меньшую сторону! </p>
+			<h2 class='result-title-2'>Скорее получите свой результат!</h2>
+			<div class='result-text-block'>
+				<p>
+					В целях защиты персональных
+					данных результат теста, их подробная интерпретация и рекомендации доступны в виде голосового сообщения по
+					звонку с вашего мобильного телефона
+				</p>
+			</div>
+			<p class='result-text-bottom'>
+				Звоните скорее, запись доступна всего <span>10:00</span> минут
+			</p>
+			<div class='result-call-block'>
+				<span></span>
+				<p>
+					Позвонить и прослушать результат
+				</p>
+			</div>
+			<div id='call-result'></div>
+			<p style='display: none' id='user-result'></p>
+		</div>
+	</div>
+</main>
+<script src='../nav.js'></script>
+<script src='../script.js'></script>
+</body>
+</html>
