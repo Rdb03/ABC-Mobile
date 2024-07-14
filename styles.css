@@ -1,0 +1,41 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background-color: #f4f4f4;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #f4f4f4;
+	padding: 10px 20px;
+	overflow: hidden;
+	max-height: 40px; /* Высота для двух строк текста */
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+footer:hover {
+	max-height: none;
+	white-space: normal;
+}
+
+#result {
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid #ddd;
+}
